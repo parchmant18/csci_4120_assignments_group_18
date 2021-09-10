@@ -32,7 +32,9 @@ While crude, the user does have the ability to modify two runtime parameters wit
 
 ### Which K (from 1 to 20) works the best? If all Ks have similar accuracy, please write down your thoughts about “Why.”
 
-We found that a run of only five trials per k was insufficient for stable reproduction of trends. We became curious and expanded the number of trials greatly, to 1000. Graphs of 5 trials and 1000 trials are both provided below. Multiple reproductions of the 1000 trial graph demonstrated a maximum accuracy in the range of 1 <= k <= 4. In our observations a k of 3 was most frequently the highest scoring for the 1000 trial runs. We hypothesize that this is the case because the categories are distinctly clustered from each other. Thus, it requires little information to group them. A k above a threshold ~4 can have a relatively large negative impact.
+We found that a run of only five trials per k was insufficient for stable reproduction of trends. We became curious and expanded the number of trials greatly, to 1000. Graphs of 5 trials and 1000 trials are both provided below. Multiple reproductions of the 1000 trial graph demonstrated a maximum accuracy most frequently at a value of k = 13. However, none of the tested k-values performed terribly. All ks had an accuracy of ~0.94 or higher. However, the high and low ends of the k-value ranges performed the worst. The high accuracy suggests that the data is well clustered and hence knn is a well-suited method for classification.
+
+Worth note is that even numbers perform worse than odd numbers. I suspect this has to do with how the algorithm handles split decision edge cases; the instances when neighbors are evenly split between two (or more) groups. I could not locate it in the documentation but my suspiscion is that in such cases an assignment is made by some form of random choice thus reducing the accuracy of predictions. 
 
 
 

@@ -4,6 +4,7 @@
 import sklearn.neighbors as skn
 import sklearn.model_selection as skts
 import numpy as np
+import pandas as pd
 
 '''--------
 | Options |
@@ -28,7 +29,6 @@ plot_name = "./k5.png"
 def load_dataset(filename):
     df = pd.read_csv(filename, header=None)
     array = df.to_numpy()
-    random.shuffle(array)
     return array
 
 # Purpose:
@@ -51,6 +51,11 @@ def label_feature_split(data):
 ---------------------------'''
 # Generation and testing of varied knn k value.
 
+'''---------------------------
+| Model Generation an Testing|
+---------------------------'''
+# Generation and testing of varied knn k value.
+
 import sklearn.neighbors as skn
 import sklearn.model_selection as skts
 import numpy as np
@@ -65,26 +70,29 @@ data = load_dataset(url)
 feature_collection, label_collection = label_feature_split(data)
 
 
-# List containing tuples with two entries. First is n and second is the average
-# score.
+# Dict to contain results. K-value as index and results in a list.
 n_with_score = dict()
 for test_n in range(0, trials):
+    # Split data before varying k. Ensures that k is the only factor being changed.
+    feature_train, feature_test, label_train, label_test = skts.train_test_split(feature_collection, 
+                                                                             label_collection, 
+                                                                             test_size = 0.20)
     for n in range(1, 21):
+        # If index not present in dictionary then add it.
         if n in n_with_score:
             pass
         else:
             n_with_score[n] = []
-        feature_train, feature_test, label_train, label_test = skts.train_test_split(feature_collection, 
-                                                                             label_collection, 
-                                                                             test_size = 0.20)
+        # knn code
         hood = skn.KNeighborsClassifier(n_neighbors = n)
         hood.fit(feature_train, label_train)
         score = hood.score(feature_test, label_test)
         n_with_score[n].append(score)
         
-# Calculate average score
+# Lists to store average score data.
 plot_data_x = []
 plot_data_y = []
+# Calculate means for each k value. 
 for key in n_with_score:
     n_with_score[key] = np.mean(np.array(n_with_score[key]))
     plot_data_x.append(int(key))
