@@ -38,4 +38,4 @@ The best k had an accuraccy of 100% on the test data. This was hard to accept at
 
 A confusion matrix will be rendered within the jupyter notebook when it is run. An image of that matrix is also included below.
 
-!()[./confusion_matrix.png]
+!()[https://github.com/AppleIntusion/csci_4120_assignments_group_18/tree/main/2_elbow/confusion_matrix.png]
