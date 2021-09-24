@@ -2,9 +2,9 @@
 
 ## Team Member Information
 
-Samuel Lindsay, lindsays15@students.ecu.edu
-Ian Lozano Diaz, lozanodiazi20@students.ecu.edu
-Thaddaeus Parchman, parchmant18@students.ecu.edu
+Samuel Lindsay, lindsays15@students.ecu.edu <br \>
+Ian Lozano Diaz, lozanodiazi20@students.ecu.edu <br \>
+Thaddaeus Parchman, parchmant18@students.ecu.edu <br \>
 
 ## Quick Start
 
