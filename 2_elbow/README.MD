@@ -21,8 +21,16 @@ seaborn
 
 ### Running
 
-You can execute the cells of the included jupyter notebook as
-long as you have the dependencies installed. 
+A script is included that you can run using:
+``` python
+python3 hw2.py
+```
+A notebook is also included. You can execute the cells of the 
+included jupyter notebook as long as you have the dependencies installed. 
+There was a machine in my lab that it didn't want to
+run on, kept getting a seg fault and wasn't able to easily trace
+the error. The notebook worked across all machines I worked on.
+Wanted to include the notebook just in case a similar issue popped up.
 
 ## Questions
 
