@@ -58,4 +58,5 @@ sns.heatmap(mat.T, square=True, annot=True, fmt='d', cbar=False,
             xticklabels=[0, 1, 2, 3],
             yticklabels=[0, 1, 2, 3])
 plt.xlabel('true label')
-plt.ylabel('predicted label');
+plt.ylabel('predicted label')
+plt.show();
