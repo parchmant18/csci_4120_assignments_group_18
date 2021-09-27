@@ -42,7 +42,7 @@ Four was found to be the optimal value of k.
 
 The best k had an accuraccy of 100% on the test data. This was hard to accept at first. We then recognized that the data generated was 4 ideal clusters.
 
-### Confuction matrix
+### Confusion matrix
 
 A confusion matrix will be rendered within the jupyter notebook when it is run. An image of that matrix is also included below.
 
